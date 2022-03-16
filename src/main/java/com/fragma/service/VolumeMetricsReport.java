@@ -57,6 +57,16 @@ public class VolumeMetricsReport {
         controlBahrainSet.add(Controls.obuLoansIssuedOpenAccount);
         controlBahrainSet.add(Controls.obuLoanssettledReports);
 
+        //March09-2022
+        controlBahrainSet.add(Controls.loanssettlementReport);
+        controlBahrainSet.add(Controls.billssettlementReport);
+        controlBahrainSet.add(Controls.activebillsReport);
+        controlBahrainSet.add(Controls.billsClosureReport);
+        controlBahrainSet.add(Controls.tradeLoansReport);
+        controlBahrainSet.add(Controls.legalisationReport);
+
+        controlBahrainSet.add(Controls.bcrefReports);
+
 
         controlUAEORIBGSet.add(Controls.edmsInventoryReport);
         controlUAEORIBGSet.add(Controls.blockedMT103Report);
@@ -141,6 +151,65 @@ public class VolumeMetricsReport {
                 bahrainSummaryHtmlMap.put(control,summaryHtml);
                 break;
 
+                //March09-2022
+            case  Controls.loanssettlementReport:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForloanssettlementReport());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForloanssettlementReport());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerForloanssettlementReport());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+            case  Controls.billssettlementReport:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForbillssettlementReport());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForbillssettlementReport());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerForbillssettlementReport());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+            case  Controls.activebillsReport:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForactivebillsReport());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForactivebillsReport());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerForactivebillsReport());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+            case  Controls.billsClosureReport:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForbillsClosureReport());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForbillsClosureReport());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerForbillsClosureReport());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+            case  Controls.tradeLoansReport:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerFortradeLoansReport());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerFortradeLoansReport());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerFortradeLoansReport());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+            case  Controls.legalisationReport:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForlegalisationReport());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForlegalisationReport());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerForlegalisationReport());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+            case  Controls.bcrefReports:
+                summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForbcrefReports());
+                summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForbcrefReports());
+                summaryHtml.setSecondaryReviewer(inputDataConfig.getSecondaryReviewerForbcrefReports());
+                summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
+                bahrainSummaryHtmlMap.put(control,summaryHtml);
+                break;
+
+                //======UAE=OR=IBG===========
+
             case  Controls.edmsInventoryReport:
                 summaryHtml.setReportOwner(inputDataConfig.getReportOwnerForEdmsInventoryReport());
                 summaryHtml.setPrimaryReviewer(inputDataConfig.getPrimaryReviewerForEdmsInventoryReport());
@@ -156,6 +225,8 @@ public class VolumeMetricsReport {
                 summaryHtml.setTotalFlaggedTransactions(summaryHtml.getTotalFlaggedTransactions() + count);
                 uaeOrIbgSummaryHtmlMap.put(control,summaryHtml);
                 break;
+
+
         }
     }
 
@@ -172,8 +243,6 @@ public class VolumeMetricsReport {
             /*String[] split = sheetName.split("&", 2);
             String controlName = split[0];
             String reportType = split[1];*/
-
-
                 rownum = 0;
                 Sheet sheet = workbook.createSheet(sheetName);
                if (sheetList.size() != 0) {

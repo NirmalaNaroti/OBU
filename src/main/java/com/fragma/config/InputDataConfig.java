@@ -25,6 +25,16 @@ public class InputDataConfig {
     private String loansIssuedOpenTRDatadump;
     private  String loansIssuedCollectionDatadump;
 
+//March09-2022
+   private String  loanssettlementReportDatadump;
+   private String  billssettlementReportDatadump;
+   private String activebillsReportDatadump;
+   private String billsClosureReportDatadump;
+   private String tradeLoansReportDatadump;
+   private String legalisationReportDatadump;
+
+   private String bcrefReportsDatadump;
+
     //TotalTransactions
     private String obuimportBillInitialdue;
     private String obuimportBillFinaldue;
@@ -38,6 +48,16 @@ public class InputDataConfig {
    private String edmsInventoryReport;
    private String blockedMT103Report;
 
+   //March09-2022
+    private String loanssettlementReport;
+    private String billssettlementReport;
+    private String activebillsReport;
+    private String billsClosureReport;
+    private String tradeLoansReport;
+    private String legalisationReport;
+
+    private String bcrefReports;
+
 //reportOwner
     private String reportOwnerForobuimportBillInitialdue;
     private String reportOwnerForobuimportBillFinaldue;
@@ -49,6 +69,17 @@ public class InputDataConfig {
     private String reportOwnerForobuLoansIssuedOpenAccount;
     private String reportOwnerForEdmsInventoryReport;
     private String reportOwnerForBlockedMT103Report;
+
+    //##MArch06-2022
+    private String reportOwnerForloanssettlementReport;
+    private String reportOwnerForbillssettlementReport;
+    private String reportOwnerForactivebillsReport;
+    private String  reportOwnerForbillsClosureReport;
+    private String  reportOwnerFortradeLoansReport;
+    private String  reportOwnerForlegalisationReport;
+
+    private String reportOwnerForbcrefReports;
+
 
 
 //primaryReviewer
@@ -65,6 +96,16 @@ public class InputDataConfig {
    private String primaryReviewerForEdmsInventoryReport;
    private String primaryReviewerForBlockedMT103Report;
 
+   //##MArch06-2022
+   private String primaryReviewerForloanssettlementReport;
+   private String primaryReviewerForbillssettlementReport;
+   private String primaryReviewerForactivebillsReport;
+   private String primaryReviewerForbillsClosureReport;
+   private String primaryReviewerFortradeLoansReport;
+   private String primaryReviewerForlegalisationReport;
+
+   private String primaryReviewerForbcrefReports;
+
 //secondaryReviewer
 
     private String secondaryReviewerForobuimportBillInitialdue;
@@ -78,6 +119,16 @@ public class InputDataConfig {
 
     private String secondaryreviewerForEdmsInventoryReport;
     private String  secondaryReviewerForBlockedMT103Report;
+
+    //##MArch06-2022
+    private String secondaryReviewerForloanssettlementReport;
+    private String secondaryReviewerForbillssettlementReport;
+    private String secondaryReviewerForactivebillsReport;
+    private String  secondaryReviewerForbillsClosureReport;
+    private String secondaryReviewerFortradeLoansReport;
+    private String secondaryReviewerForlegalisationReport;
+
+    private String secondaryReviewerForbcrefReports;
 
 
     public String getReportOwnerForobuimportBillInitialdue() {
@@ -488,5 +539,285 @@ public class InputDataConfig {
 
     public void setReportOwnerForobuLoanssettledReports(String reportOwnerForobuLoanssettledReports) {
         this.reportOwnerForobuLoanssettledReports = reportOwnerForobuLoanssettledReports;
+    }
+
+    public String getLoanssettlementReportDatadump() {
+        return loanssettlementReportDatadump;
+    }
+
+    public void setLoanssettlementReportDatadump(String loanssettlementReportDatadump) {
+        this.loanssettlementReportDatadump = loanssettlementReportDatadump;
+    }
+
+    public String getBillssettlementReportDatadump() {
+        return billssettlementReportDatadump;
+    }
+
+    public void setBillssettlementReportDatadump(String billssettlementReportDatadump) {
+        this.billssettlementReportDatadump = billssettlementReportDatadump;
+    }
+
+    public String getActivebillsReportDatadump() {
+        return activebillsReportDatadump;
+    }
+
+    public void setActivebillsReportDatadump(String activebillsReportDatadump) {
+        this.activebillsReportDatadump = activebillsReportDatadump;
+    }
+
+    public String getBillsClosureReportDatadump() {
+        return billsClosureReportDatadump;
+    }
+
+    public void setBillsClosureReportDatadump(String billsClosureReportDatadump) {
+        this.billsClosureReportDatadump = billsClosureReportDatadump;
+    }
+
+    public String getTradeLoansReportDatadump() {
+        return tradeLoansReportDatadump;
+    }
+
+    public void setTradeLoansReportDatadump(String tradeLoansReportDatadump) {
+        this.tradeLoansReportDatadump = tradeLoansReportDatadump;
+    }
+
+    public String getLegalisationReportDatadump() {
+        return legalisationReportDatadump;
+    }
+
+    public void setLegalisationReportDatadump(String legalisationReportDatadump) {
+        this.legalisationReportDatadump = legalisationReportDatadump;
+    }
+
+    public String getBcrefReportsDatadump() {
+        return bcrefReportsDatadump;
+    }
+
+    public void setBcrefReportsDatadump(String bcrefReportsDatadump) {
+        this.bcrefReportsDatadump = bcrefReportsDatadump;
+    }
+
+    public String getLoanssettlementReport() {
+        return loanssettlementReport;
+    }
+
+    public void setLoanssettlementReport(String loanssettlementReport) {
+        this.loanssettlementReport = loanssettlementReport;
+    }
+
+    public String getBillssettlementReport() {
+        return billssettlementReport;
+    }
+
+    public void setBillssettlementReport(String billssettlementReport) {
+        this.billssettlementReport = billssettlementReport;
+    }
+
+    public String getActivebillsReport() {
+        return activebillsReport;
+    }
+
+    public void setActivebillsReport(String activebillsReport) {
+        this.activebillsReport = activebillsReport;
+    }
+
+    public String getBillsClosureReport() {
+        return billsClosureReport;
+    }
+
+    public void setBillsClosureReport(String billsClosureReport) {
+        this.billsClosureReport = billsClosureReport;
+    }
+
+    public String getTradeLoansReport() {
+        return tradeLoansReport;
+    }
+
+    public void setTradeLoansReport(String tradeLoansReport) {
+        this.tradeLoansReport = tradeLoansReport;
+    }
+
+    public String getLegalisationReport() {
+        return legalisationReport;
+    }
+
+    public void setLegalisationReport(String legalisationReport) {
+        this.legalisationReport = legalisationReport;
+    }
+
+    public String getBcrefReports() {
+        return bcrefReports;
+    }
+
+    public void setBcrefReports(String bcrefReports) {
+        this.bcrefReports = bcrefReports;
+    }
+
+    public String getReportOwnerForloanssettlementReport() {
+        return reportOwnerForloanssettlementReport;
+    }
+
+    public void setReportOwnerForloanssettlementReport(String reportOwnerForloanssettlementReport) {
+        this.reportOwnerForloanssettlementReport = reportOwnerForloanssettlementReport;
+    }
+
+    public String getReportOwnerForbillssettlementReport() {
+        return reportOwnerForbillssettlementReport;
+    }
+
+    public void setReportOwnerForbillssettlementReport(String reportOwnerForbillssettlementReport) {
+        this.reportOwnerForbillssettlementReport = reportOwnerForbillssettlementReport;
+    }
+
+    public String getReportOwnerForactivebillsReport() {
+        return reportOwnerForactivebillsReport;
+    }
+
+    public void setReportOwnerForactivebillsReport(String reportOwnerForactivebillsReport) {
+        this.reportOwnerForactivebillsReport = reportOwnerForactivebillsReport;
+    }
+
+    public String getReportOwnerForbillsClosureReport() {
+        return reportOwnerForbillsClosureReport;
+    }
+
+    public void setReportOwnerForbillsClosureReport(String reportOwnerForbillsClosureReport) {
+        this.reportOwnerForbillsClosureReport = reportOwnerForbillsClosureReport;
+    }
+
+    public String getReportOwnerFortradeLoansReport() {
+        return reportOwnerFortradeLoansReport;
+    }
+
+    public void setReportOwnerFortradeLoansReport(String reportOwnerFortradeLoansReport) {
+        this.reportOwnerFortradeLoansReport = reportOwnerFortradeLoansReport;
+    }
+
+    public String getReportOwnerForlegalisationReport() {
+        return reportOwnerForlegalisationReport;
+    }
+
+    public void setReportOwnerForlegalisationReport(String reportOwnerForlegalisationReport) {
+        this.reportOwnerForlegalisationReport = reportOwnerForlegalisationReport;
+    }
+
+    public String getReportOwnerForbcrefReports() {
+        return reportOwnerForbcrefReports;
+    }
+
+    public void setReportOwnerForbcrefReports(String reportOwnerForbcrefReports) {
+        this.reportOwnerForbcrefReports = reportOwnerForbcrefReports;
+    }
+
+    public String getPrimaryReviewerForloanssettlementReport() {
+        return primaryReviewerForloanssettlementReport;
+    }
+
+    public void setPrimaryReviewerForloanssettlementReport(String primaryReviewerForloanssettlementReport) {
+        this.primaryReviewerForloanssettlementReport = primaryReviewerForloanssettlementReport;
+    }
+
+    public String getPrimaryReviewerForbillssettlementReport() {
+        return primaryReviewerForbillssettlementReport;
+    }
+
+    public void setPrimaryReviewerForbillssettlementReport(String primaryReviewerForbillssettlementReport) {
+        this.primaryReviewerForbillssettlementReport = primaryReviewerForbillssettlementReport;
+    }
+
+    public String getPrimaryReviewerForactivebillsReport() {
+        return primaryReviewerForactivebillsReport;
+    }
+
+    public void setPrimaryReviewerForactivebillsReport(String primaryReviewerForactivebillsReport) {
+        this.primaryReviewerForactivebillsReport = primaryReviewerForactivebillsReport;
+    }
+
+    public String getPrimaryReviewerForbillsClosureReport() {
+        return primaryReviewerForbillsClosureReport;
+    }
+
+    public void setPrimaryReviewerForbillsClosureReport(String primaryReviewerForbillsClosureReport) {
+        this.primaryReviewerForbillsClosureReport = primaryReviewerForbillsClosureReport;
+    }
+
+    public String getPrimaryReviewerFortradeLoansReport() {
+        return primaryReviewerFortradeLoansReport;
+    }
+
+    public void setPrimaryReviewerFortradeLoansReport(String primaryReviewerFortradeLoansReport) {
+        this.primaryReviewerFortradeLoansReport = primaryReviewerFortradeLoansReport;
+    }
+
+    public String getPrimaryReviewerForlegalisationReport() {
+        return primaryReviewerForlegalisationReport;
+    }
+
+    public void setPrimaryReviewerForlegalisationReport(String primaryReviewerForlegalisationReport) {
+        this.primaryReviewerForlegalisationReport = primaryReviewerForlegalisationReport;
+    }
+
+    public String getPrimaryReviewerForbcrefReports() {
+        return primaryReviewerForbcrefReports;
+    }
+
+    public void setPrimaryReviewerForbcrefReports(String primaryReviewerForbcrefReports) {
+        this.primaryReviewerForbcrefReports = primaryReviewerForbcrefReports;
+    }
+
+    public String getSecondaryReviewerForloanssettlementReport() {
+        return secondaryReviewerForloanssettlementReport;
+    }
+
+    public void setSecondaryReviewerForloanssettlementReport(String secondaryReviewerForloanssettlementReport) {
+        this.secondaryReviewerForloanssettlementReport = secondaryReviewerForloanssettlementReport;
+    }
+
+    public String getSecondaryReviewerForbillssettlementReport() {
+        return secondaryReviewerForbillssettlementReport;
+    }
+
+    public void setSecondaryReviewerForbillssettlementReport(String secondaryReviewerForbillssettlementReport) {
+        this.secondaryReviewerForbillssettlementReport = secondaryReviewerForbillssettlementReport;
+    }
+
+    public String getSecondaryReviewerForactivebillsReport() {
+        return secondaryReviewerForactivebillsReport;
+    }
+
+    public void setSecondaryReviewerForactivebillsReport(String secondaryReviewerForactivebillsReport) {
+        this.secondaryReviewerForactivebillsReport = secondaryReviewerForactivebillsReport;
+    }
+
+    public String getSecondaryReviewerForbillsClosureReport() {
+        return secondaryReviewerForbillsClosureReport;
+    }
+
+    public void setSecondaryReviewerForbillsClosureReport(String secondaryReviewerForbillsClosureReport) {
+        this.secondaryReviewerForbillsClosureReport = secondaryReviewerForbillsClosureReport;
+    }
+
+    public String getSecondaryReviewerFortradeLoansReport() {
+        return secondaryReviewerFortradeLoansReport;
+    }
+
+    public void setSecondaryReviewerFortradeLoansReport(String secondaryReviewerFortradeLoansReport) {
+        this.secondaryReviewerFortradeLoansReport = secondaryReviewerFortradeLoansReport;
+    }
+
+    public String getSecondaryReviewerForlegalisationReport() {
+        return secondaryReviewerForlegalisationReport;
+    }
+
+    public void setSecondaryReviewerForlegalisationReport(String secondaryReviewerForlegalisationReport) {
+        this.secondaryReviewerForlegalisationReport = secondaryReviewerForlegalisationReport;
+    }
+
+    public String getSecondaryReviewerForbcrefReports() {
+        return secondaryReviewerForbcrefReports;
+    }
+
+    public void setSecondaryReviewerForbcrefReports(String secondaryReviewerForbcrefReports) {
+        this.secondaryReviewerForbcrefReports = secondaryReviewerForbcrefReports;
     }
 }

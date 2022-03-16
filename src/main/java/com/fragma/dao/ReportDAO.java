@@ -71,6 +71,17 @@ public class ReportDAO {
 
         exexuteQueryForSummaryHtmlWithDateCondition(inputDataConfig.getBlockedMT103Report(), Controls.blockedMT103Report, volumeMetricsReport,businessDate);
 
+        //March09-2022
+        exexuteQueryForSummaryHtml(inputDataConfig.getLoanssettlementReport(), Controls.loanssettlementReport, volumeMetricsReport);
+        exexuteQueryForSummaryHtml(inputDataConfig.getBillssettlementReport(), Controls.billssettlementReport, volumeMetricsReport);
+        exexuteQueryForSummaryHtml(inputDataConfig.getActivebillsReport(), Controls.activebillsReport, volumeMetricsReport);
+        exexuteQueryForSummaryHtml(inputDataConfig.getBillsClosureReport(), Controls.billsClosureReport, volumeMetricsReport);
+        exexuteQueryForSummaryHtml(inputDataConfig.getTradeLoansReport(), Controls.tradeLoansReport, volumeMetricsReport);
+        exexuteQueryForSummaryHtml(inputDataConfig.getLegalisationReport(), Controls.legalisationReport, volumeMetricsReport);
+
+        exexuteQueryForSummaryHtml(inputDataConfig.getBcrefReports(), Controls.bcrefReports, volumeMetricsReport);
+
+
 
         List<List<Object>> inventoryReportDumpList = executeQueryForDump(inputDataConfig.getInventoryReportDatadump());
         volumeMetricsReport.dataDumpMap.put("Inventory_Report", inventoryReportDumpList);
@@ -102,6 +113,29 @@ public class ReportDAO {
         List<List<Object>> loanSettledDumpList = executeQueryForDump(inputDataConfig.getLoanSettledDatadump());
         volumeMetricsReport.dataDumpMap.put("Loans_Settled-"+dateInHeader,loanSettledDumpList);
 
+
+        //---MArch09-2022
+        List<List<Object>> loansSettlementDumpList = executeQueryForDump(inputDataConfig.getLoanssettlementReportDatadump());
+        volumeMetricsReport.dataDumpMap.put("Loans_Settlement-"+dateInHeader,loansSettlementDumpList);
+
+        List<List<Object>> billsSettlementReportDumpList = executeQueryForDump(inputDataConfig.getBillssettlementReportDatadump());
+        volumeMetricsReport.dataDumpMap.put("Bills_Settlement_Report-"+dateInHeader,billsSettlementReportDumpList);
+
+        List<List<Object>> activeBillsReportDumpList = executeQueryForDump(inputDataConfig.getActivebillsReportDatadump());
+        volumeMetricsReport.dataDumpMap.put("Active_Bills_Report-"+dateInHeader,activeBillsReportDumpList);
+
+        List<List<Object>> billsClosureReportDumpList = executeQueryForDump(inputDataConfig.getBillsClosureReportDatadump());
+        volumeMetricsReport.dataDumpMap.put("Bills_Closure_Report-"+dateInHeader,billsClosureReportDumpList);
+
+        List<List<Object>> tradeLoanReportDumpList = executeQueryForDump(inputDataConfig.getTradeLoansReportDatadump());
+        volumeMetricsReport.dataDumpMap.put("Trade_Loan_Report-"+dateInHeader,tradeLoanReportDumpList);
+
+        List<List<Object>> LegalisationReportDumpList = executeQueryForDump(inputDataConfig.getLegalisationReportDatadump());
+        volumeMetricsReport.dataDumpMap.put("Loans_Settled-"+dateInHeader,LegalisationReportDumpList);
+
+        List<List<Object>> bcrefDumpList = executeQueryForDump(inputDataConfig.getBcrefReportsDatadump());
+        volumeMetricsReport.dataDumpMap.put("BCREF-"+dateInHeader,bcrefDumpList);
+
         LOGGER.info("---------------------------------exexuteQueries(-) ended--------------------------------------");
 
 
@@ -121,6 +155,7 @@ public class ReportDAO {
                  java.sql.Date date = new java.sql.Date(businessDate.getTime());
                 //  java.sql.Date upperLimit = new java.sql.Date(nextBusinessDate.getTime());
 
+                    LOGGER.info("Date Parameter"+formateDate(date));
                 ps.setString(1, formateDate(date));
                 //ps.setString(2, formateDate(upperLimit));
 
@@ -130,16 +165,22 @@ public class ReportDAO {
             @Override
             public void processRow(ResultSet resultSet) throws SQLException {
 
-                int count = resultSet.getInt(1);
+               // int count = resultSet.getInt(1);
                 LOGGER.info("control :" + control);
-                LOGGER.info("count :" + count);
+                ++count;
 
-                volumeMetricsReport.populateSummaryHtmlMap(control, count, inputDataConfig);
             }
         });
 
+        LOGGER.info("count :" + count);
+
+        volumeMetricsReport.populateSummaryHtmlMap(control, count, inputDataConfig);
+
+        count = 0;
+
     }
 
+    int count=0;
 
     private void exexuteQueryForSummaryHtml(String summaryQuery, String control, VolumeMetricsReport volumeMetricsReport) {
 
@@ -156,13 +197,17 @@ public class ReportDAO {
             @Override
             public void processRow(ResultSet resultSet) throws SQLException {
 
-                int count = resultSet.getInt(1);
+                //int count = resultSet.getInt(1);
                 LOGGER.info("control :" + control);
-                LOGGER.info("count :" + count);
+                ++count;
 
-                volumeMetricsReport.populateSummaryHtmlMap(control, count, inputDataConfig);
+
+
             }
         });
+        LOGGER.info("count :" + count);
+        volumeMetricsReport.populateSummaryHtmlMap(control, count, inputDataConfig);
+        count=0;
 
     }
 
@@ -251,9 +296,16 @@ public class ReportDAO {
                     for (int i = 1; i <= columnCount; i++) {
                         String columnName = resultSet.getMetaData().getColumnName(i);
                         //   LOGGER.info("Column name :" + columnName);
+
+                        String[] splittedColumnName = null;
+                        if (columnName.contains(".")) {
+                            splittedColumnName = columnName.split("\\.");
+                            columnName = splittedColumnName[1];
+                        }
                         columnNames.add(columnName);
 
                     }
+
                     controlDataList.add(columnNames);
                     columnNamesAdded.add(true);
                 }
